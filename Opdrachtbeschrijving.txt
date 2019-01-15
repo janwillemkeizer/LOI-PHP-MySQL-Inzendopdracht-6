@@ -1,0 +1,55 @@
+Schrijf een PHP-script waarmee nieuwe leden van een omnisportvereniging zich kunnen aanmelden bij de vereniging. Nadat de gegevens zijn ingevoerd en er op de verstuurbutton is geklikt, moet de invoer op juistheid worden getoetst. Als er een gegeven fout of niet is ingevoerd, moet hiervan melding worden gemaakt en moet de mogelijkheid worden geboden om de gegevens te verbeteren.
+Als de gegevens juist zijn, dan moeten deze aan de database worden toegevoegd. Het nieuwe lid krijgt vervolgens een mail, waarin de aanmelding wordt bevestigd en de ledenadministratie van de vereniging (u in dit geval) krijgt een mail met daarin de aanmelding. Deze mail moet bestaan uit de naam van het lid (samengesteld uit voornaam, tussenvoegsels en achternaam), het lidnummer dat is toegekend (in de database) en het sportonderdeel waarvoor is ingeschreven.
+
+De ingevoerde gegevens worden opgeslagen in de tabellen "leden" en "lidmaatschap" in de database "dbLOI".
+De tabel "leden" bestaat uit de volgende gegevens:
+ID (INT, AUTO_INCREMENT, PRIMARY KEY, NOT NULL)
+Voornaam (20 karakters, NOT NULL)
+Tussenvoegsels (15 karakters)
+Achternaam (30 karakters, NOT NULL)
+Straat (50 karakters)
+Huisnummer (10 karakters)
+Postcode (6 karakters)
+Woonplaats (30 karakters)
+E-mail (50 karakters)
+Geboortedatum (DATE)
+Geslacht (1 karakter (M/V))
+
+De tabel "lidmaatschap" bestaat uit de volgende gegevens:
+ID (INT, AUTO_INCREMENT, PRIMARY KEY, NOT NULL)
+LedenID (INT, NOT NULL)
+Datumingang (DATE, NOT NULL)
+Datumeinde (DATE)
+Sportonderdeel (30 karakters, NOT NULL)
+Lesdag (15 karakters)
+
+Note:
+
+ Eigenlijk zou er nog een tabel "lessen" moeten worden toegevoegd waarin alle mogelijke lessen van de omnisportvereniging staan. Het unieke ID van deze tabel zou dan moeten worden opgenomen in de tabel "lidmaatschap", i.p.v. de velden sportonderdeel en lesdag. Voor deze opdracht hoeft u hier echter niets mee te doen en moet u bovenstaande tabellen gebruiken.
+De bovenstaande tabellen zijn opgesteld volgens het principe dat één lid meerdere lidmaatschappen kan aangaan. In deze opdracht mag u er echter van uitgaan dat iedere aanmelding een compleet nieuw lid betreft.
+Uw uitwerking moet aan de volgende voorwaarden voldoen:
+
+Welgevormde HTML-structuur.
+Geef het programma de titel "Inzendopdracht 051R6".
+Zorg voor een nette en duidelijke lay-out.
+Zorg voor een overzichtelijke structuur voor het opslaan van de bestanden op de server. Tip: Maak gebruik van subdirectories.
+Gebruik verschillende kleuren en minimaal één plaatje.
+Het veld "sportonderdeel" kan alleen de waarden tennis, voetbal, tafeltennis en biljart bevatten. De gebruiker moet via een selectieveld de sport kiezen.
+Het geslacht mag alleen de waarden "M" en "V" bevatten. De gebruiker moet via een radiobutton de juiste selecteren.
+De lesdag kan alleen de waarden maandag t/m vrijdag bevatten. De gebruiker moet via een selectieveld de lesdag kiezen.
+Houd er rekening mee dat het tussenvoegsel quotes kan bevatten, bv. in ’t Veld.
+Test het e-mailadres op juistheid (zie ook oefenopdracht 19-1).
+Test of alle verplichte databasevelden in het formulier zijn ingevuld en geef een melding als dit niet het geval is en geef de gebruiker de mogelijkheid om de gegevens te herstellen.
+Gebruik labels om aan te geven wat er in de in te vullen velden moet worden ingevuld.
+Zorg voor foutafhandeling als de verbinding met de server of de database niet tot stand kan worden gebracht.
+Maak een centraal bestand waarin de gegevens voor de toegang tot de database staan.
+Maak gebruik van uw eigen error_handler (zie ook oefenopdracht 22-1).
+Op het invulformulier moet naast een verstuurbutton ook een "reset"-button staan om de ingevulde, maar nog niet verstuurde, gegevens uit het formulier te verwijderen.
+Als de button voor versturen wordt gebruikt, moeten de ingevulde gegevens in de database worden gezet, een bevestigingsmail naar het lid worden verstuurd en een mail naar de ledenadministratie worden verstuurd.
+Als het mailen misgaat, dan mag dat geen foutmelding opleveren, alleen een melding naar de gebruiker.
+Het potentiële lid moet in het formulier zelf de datum ingang opvoeren.
+Gebruik van Java(script) is verboden.
+Zorg ervoor dat uw code geen afhankelijkheid bevat waardoor deze op een andere server niet werkt.
+Tip: voer eerst de lidgegevens in de database in en haal vervolgens het ID van het zojuist ingevoerde lid op om de lidmaatschaptabel te kunnen vullen.
+
+
